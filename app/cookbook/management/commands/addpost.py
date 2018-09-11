@@ -13,6 +13,6 @@ class Command(BaseCommand):
         post_cnt = options['post_cnt']
         if post_cnt > 0:
             Book.objects.bulk_create(
-                [Book(text='Sample Text #{}'.format(i) for i in range(post_cnt))]
+                [Book(text='Sample Text #{}'.format(i)) for i in range(post_cnt)]
             )
             self.stdout.write(self.style.SUCCESS('Successfully add {} posts'.format(post_cnt)))
